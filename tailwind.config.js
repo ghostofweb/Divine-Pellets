@@ -7,18 +7,36 @@ export default {
   theme: {
     extend: {
       colors: {
-        "background": "#FFFFFF",
-        "dark-green": "#1B392F",
-        "gold-bronze": "#C5A572",
-        "light-green": "#4A635C",
-        "very-light-green": "#F4F7F6",
-        "soft-gold": "#F5EEE1",
-        "dark-gray": "#333333",
-        "card": "#F4F7F6"
+        // Main Background Colors
+        "bg-primary": "#1B392F",     // Main deep forest green
+        "bg-darker": "#152B24",      // Darker edge green
+        "bg-darkest": "#0F1F1B",     // Darkest corner green
+        
+        // Logo & Accent Colors
+        "gold-light": "#DFC195",     // Lighter metallic gold for highlights
+        "gold-base": "#C5A572",      // Base gold color for main elements
+        "gold-dark": "#8A7147",      // Darker gold for depth and shadows
+        
+        // Text Colors
+        "text-primary": "#FFFFFF",   // White text
+        "text-secondary": "#F5EEE1", // Soft gold for secondary text
+        "text-muted": "#A8B3B0",     // Muted text for less emphasis
+        
+        // UI Element Colors
+        "card-bg": "#233832",        // Slightly lighter green for cards
+        "card-hover": "#2A433C",     // Hover state for cards
+        "border": "#4A635C",         // Border color (light green)
+        
+        // Status Colors
+        "success": "#4A635C",        // Success messages
+        "warning": "#DFC195",        // Warning messages
+        "error": "#C17667"           // Error messages
       },
       fontFamily: {
-        "header": ["Optima", "Trajan Pro", "Cinzel", "serif"],
-        "body": ["Montserrat", "Open Sans", "Lato", "sans-serif"]
+        // Premium serif fonts for headers
+        "header": ["Cinzel", "Playfair Display", "Cormorant", "serif"],
+        // Clean sans-serif for body text
+        "body": ["Montserrat", "Open Sans", "sans-serif"]
       }
     }
   },
