@@ -7,6 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
+        'icegold': '#F5EEE1',  // Icegold background color
+        'darkgreen': '#1B392F', // Dark green text color for hover
         // Main Background Colors
         "bg-primary": "#1B392F",     // Main deep forest green
         "bg-darker": "#152B24",      // Darker edge green
@@ -33,10 +35,8 @@ export default {
         "error": "#C17667"           // Error messages
       },
       fontFamily: {
-        // Premium serif fonts for headers
-        "header": ["Cinzel", "Playfair Display", "Cormorant", "serif"],
-        // Clean sans-serif for body text
-        "body": ["Montserrat", "Open Sans", "sans-serif"]
+        "cinzel": ["Cinzel", "serif"],  // Only Cinzel for headers
+        "montserrat": ["Montserrat", "sans-serif"]  // Only Montserrat for body text
       }
     }
   },
