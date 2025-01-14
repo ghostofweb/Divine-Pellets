@@ -85,7 +85,7 @@ const NavBar = () => {
     ease-in-out
     transform
     ${isOpen ? 'block translate-x-0 opacity-100' : 'translate-x-full opacity-0 hidden'}
-    sm:hidden
+    md:hidden
     z-50
     shadow-lg
   `}

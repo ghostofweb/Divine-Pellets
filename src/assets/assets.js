@@ -47,6 +47,11 @@ import rawImg6 from './raw_img6.jpg';
 import rawImg7 from './raw_img7.jpg';
 import headerlogo from './headerlogo.png'
 
+export const images = [
+  gImg1, gImg2, gImg3, gImg4, gImg5,
+  gImg6, gImg7, gImg8, gImg9, gImg10
+];
+
 export const whatarebiomass = "Biomass pellets are created by compressing finely milled organic materials, such as wood or agricultural residues, into small, dense cylinders. The process begins with hammer-milling the raw material into a uniform, dough-like consistency. This material is then fed into a pellet press, where it is pushed through a die with small holes, typically 6 mm in diameter, though larger sizes like 8 mm are also common"
 
 export const applications = [
