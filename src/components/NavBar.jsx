@@ -1,124 +1,118 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
 const NavBar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [visible, setVisible] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-    setVisible(!visible);
-  };
-
-  const closeMenu = () => {
-    setIsMenuOpen(false); // Close the menu
-    setVisible(false);     // Hide the dropdown
-  };
-
   useEffect(() => {
-    setIsMenuOpen(false); // Close the menu when the route changes
-    setVisible(false);     // Hide the dropdown when the route changes
+    setIsOpen(false);
   }, [location]);
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Products', path: '/products' },
     { name: 'About', path: '/about' },
-    { name: 'Gallaries', path: '/gallery' },
-    { name: 'What We Do', path: '/whatwedo' },
     { name: 'Contact', path: '/contact' },
+    { name: 'Gallery', path: '/gallery' },
+    { name: 'Products', path: '/products' },
+    { name: 'What We Do', path: '/whatwedo' }
   ];
 
   return (
-    <div>
-      <div
+    <nav className="relative">
+      <div 
         style={{
-          background: 'linear-gradient(to top, #2E4A3A, #1A3D33)', // Green gradient background
+          background: 'linear-gradient(to bottom, #2E4A3A, #1A3D33)'
         }}
-        className="text-white px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] py-4 flex items-center justify-between z-50 relative font-montserrat"
       >
-        {/* Logo */}
-        <div className="text-xl font-header">
-          <Link to="/" className="text-soft-gold hover:text-white transition-colors">
-            <img src="headerlogo.png" alt="Logo" className="w-56" />
-          </Link>
-        </div>
+        <div className="container mx-auto sm:px-[5vw] md:px-[7vw] lg:px-[9vw] px-4">
+          <div className="flex items-center justify-between">
+            {/* Logo - Fixed size */}
+            <Link to="/" className="py-2">
+              <img 
+                src="/headerlogo.png" 
+                alt="Logo" 
+                className="w-56 object-contain"
+                style={{ height: '85px' }} // Fixed height
+              />
+            </Link>
 
-        {/* Links (Desktop) */}
-        <div className="hidden sm:flex space-x-4 sm:text-sm md:space-x-4 md:text-md lg:space-x-6 lg:text-lg xl:space-x-8 text-xl ">
-          {navLinks.map((link, index) => {
-            const isActive = location.pathname === link.path;
-            return (
-              <div key={index} className="relative">
+            {/* Desktop Navigation - vertically centered */}
+            <div className="hidden md:flex items-center space-x-8 h-full">
+              {navLinks.map((link) => (
                 <NavLink
-                  onClick={() => setVisible(false)}
-                  className={`py-2 px-2 transition-all duration-300 ease-in-out ${
-                    isActive
-                      ? 'text-gold-light'
-                      : 'hover:text-gold-light hover:scale-105'
-                  }`}
+                  key={link.path}
                   to={link.path}
+                  className={({ isActive }) => `relative text-white font-montserrat text-lg transition-colors duration-200 hover:text-[#DFC195] ${isActive ? 'text-[#DFC195]' : ''}`}
                 >
-                  {link.name}
+                  {({ isActive }) => (
+                    <div className="flex flex-col items-center">
+                      {link.name}
+                      {isActive && <hr className="absolute -bottom-2 w-full border-[#DFC195] border-b-2" />}
+                    </div>
+                  )}
                 </NavLink>
-                {isActive && (
-                  <hr className="border-none h-[1.5px] bg-gold-light transition-colors duration-200 ease-in-out" />
-                )}
-              </div>
-            );
-          })}
-        </div>
+              ))}
+            </div>
 
-        {/* Menu Icon (Mobile) */}
-        <div className="sm:hidden flex items-center">
-          <button
-            onClick={toggleMenu}
-            aria-label="Toggle Menu"
-            className={`transform transition-transform duration-500 ${isMenuOpen ? 'rotate-360' : 'rotate-0'}`}
-          >
-            {isMenuOpen ? (
-              <CloseIcon fontSize="large" className="text-[#DFC195]" />
-            ) : (
-              <MenuIcon fontSize="large" className="text-[#DFC195]" />
-            )}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Dropdown Menu */}
-      <div
-        className={`absolute top-21 right-0 bg-[#1A3D33] text-white transition-all duration-300 ease-in-out ${visible ? 'w-3/4 h-auto p-3' : 'w-0 h-0'}`}
-      >
-        <div
-          onClick={closeMenu}  // Close the menu and reset the icon
-          className="flex items-center gap-4 p-3 cursor-pointer"
-        >
-          <ArrowBackIcon sx={{ fontSize: { xs: '1.7rem', sm: '2rem', md: '2.2rem' } }} />
-          <p className="text-xl">Back</p>
-        </div>
-        {navLinks.map((link, index) => {
-          const isActive = location.pathname === link.path;
-          return (
-            <NavLink
-              key={index}
-              onClick={closeMenu}  // Close the menu on link click
-              className={`flex flex-col py-2 pl-6 transition-all duration-300 ease-in-out ${
-                isActive
-                  ? ' text-gold-base'
-                  : ' hover:scale-105 hover:text-gold-light'
-              }`}
-              to={link.path}
+            {/* Mobile Menu Button - vertically centered */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden text-white p-2"
             >
-              {link.name}
-            </NavLink>
-          );
-        })}
+              {isOpen ? (
+                <CloseIcon className="text-[#DFC195]" sx={{ fontSize: 28 }} />
+              ) : (
+                <MenuIcon className="text-[#DFC195]" sx={{ fontSize: 28 }} />
+              )}
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
+
+      {/* Mobile Navigation */}
+      <div
+  className={`
+    absolute
+    top-full // Position it directly below the navbar
+    right-0
+    w-3/4
+    bg-[#1A3D33]
+    transition-all
+    duration-300
+    ease-in-out
+    transform
+    ${isOpen ? 'block translate-x-0 opacity-100' : 'translate-x-full opacity-0 hidden'}
+    sm:hidden
+    z-50
+    shadow-lg
+  `}
+>
+  <div className="flex flex-col py-2">
+    {navLinks.map((link) => (
+      <NavLink
+        key={link.path}
+        to={link.path}
+        onClick={() => setIsOpen(false)}
+        className={({ isActive }) => `
+          py-3
+          px-6
+          text-white
+          font-montserrat
+          transition-colors
+          duration-200
+          ${isActive ? 'bg-[#DFC195] text-[#1A3D33]' : 'hover:bg-[#2E4A3A]'}
+        `}
+      >
+        {link.name}
+      </NavLink>
+    ))}
+  </div>
+</div>
+
+    </nav>
   );
 };
 

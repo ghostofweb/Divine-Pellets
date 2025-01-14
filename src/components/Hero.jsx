@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
     return (
-        <div className='flex flex-col sm:flex-row py-12 sm:py-10 md:py-8 lg:py-12 font-bold'>
+        <div className='flex flex-col sm:flex-row py-18 sm:py-10 md:py-8 lg:py-12 font-bold'>
       
         {/* Hero Left side with animation */}
         <motion.div
@@ -41,7 +41,7 @@ const Hero = () => {
           transition={{ duration: 1 }}
         >
           <img
-            className="w-full h-auto object-cover sm:w-[70rem]"
+            className="w-full h-auto object-cover sm:w-[70rem] shadow-lg shadow-black"
             src={assets.mainImg}
             alt="Hero"
           />

@@ -47,6 +47,52 @@ import rawImg6 from './raw_img6.jpg';
 import rawImg7 from './raw_img7.jpg';
 import headerlogo from './headerlogo.png'
 
+export const whatarebiomass = "Biomass pellets are created by compressing finely milled organic materials, such as wood or agricultural residues, into small, dense cylinders. The process begins with hammer-milling the raw material into a uniform, dough-like consistency. This material is then fed into a pellet press, where it is pushed through a die with small holes, typically 6 mm in diameter, though larger sizes like 8 mm are also common"
+
+export const applications = [
+  {
+    name: "Thermal Power Plant",
+    desc: "Biomass pellets serve as a renewable fuel alternative, reducing coal usage and lowering carbon emissions effectively.",
+    img: hero3Img1,
+  },
+  {
+    name: "Food Industry",
+    desc: "Pellets provide consistent heat for baking, drying, and steaming processes, ensuring energy efficiency and sustainability.",
+    img: hero3Img2,
+  },
+  {
+    name: "Gasification Industry",
+    desc: "Biomass pellets are used to generate syngas, supporting cleaner energy production with lower environmental impact.",
+    img: hero3Img3,
+  },
+  {
+    name: "Chemical Industry",
+    desc: "Provides energy for chemical processes like distillation and synthesis, enhancing sustainability in industrial applications.",
+    img: hero3Img4,
+  },
+  {
+    name: "Color Industry",
+    desc: "Biomass pellets help power pigment production, ensuring consistent heat supply while being eco-friendly.",
+    img: hero3Img5,
+  },
+  {
+    name: "Hot Air Generation",
+    desc: "Used to generate hot air for industrial drying processes, replacing fossil fuels with greener energy solutions.",
+    img: hero3Img6,
+  },
+  {
+    name: "Pharma Industry",
+    desc: "Supports controlled heating processes in pharmaceutical production, ensuring cleaner energy for sensitive applications.",
+    img: hero3Img7,
+  },
+  {
+    name: "Commercial Burners",
+    desc: "Biomass pellets fuel burners for efficient heating in commercial spaces, reducing reliance on non-renewable fuels.",
+    img: hero3Img8,
+  },
+];
+
+
 export const assets =  {
   headerlogo,
   advImg,
