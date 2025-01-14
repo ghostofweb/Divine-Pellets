@@ -8,6 +8,7 @@ import Products from './pages/Products';
 import WhatWeDo from './pages/WhatWeDo';
 import Gallaries from './pages/gallaries';
 import NavBar from './components/NavBar';
+import ScrollToTopButton from './components/ScrollToTopButton ';
 
 const App = () => {
   return (
@@ -23,6 +24,9 @@ const App = () => {
         <Route path="/products" element={<Products />} />
         <Route path="/whatwedo" element={<WhatWeDo />} />
       </Routes>
+      </div>
+      <div className='hidden sm:block'>
+      <ScrollToTopButton/>
       </div>
       </div>
   );
