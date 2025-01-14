@@ -17,101 +17,90 @@ const NavBar = () => {
     { name: 'Contact', path: '/contact' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Products', path: '/products' },
-    { name: 'What We Do', path: '/whatwedo' }
+    { name: 'What We Do', path: '/whatwedo' },
   ];
 
   return (
-    <nav className="relative">
-      <div 
-        style={{
-          background: 'linear-gradient(to bottom, #2E4A3A, #1A3D33)'
-        }}
-      >
-        <div className="container mx-auto sm:px-[5vw] md:px-[7vw] lg:px-[9vw] px-4">
-          <div className="flex items-center justify-between">
-            {/* Logo - Fixed size */}
-            <Link to="/" className="py-2">
-              <img 
-                src="/headerlogo.png" 
-                alt="Logo" 
-                className="w-56 object-contain"
-                style={{ height: '85px' }} // Fixed height
-              />
-            </Link>
+    <nav
+      className="fixed top-0 left-0 w-full z-50"
+      style={{
+        background: 'linear-gradient(to bottom, #2E4A3A, #1A3D33)',
+        boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
+      }}
+    >
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between md:justify-start relative">
+          {/* Mobile Menu Button - Left Side */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden text-white p-2 absolute left-0"
+          >
+            {isOpen ? (
+              <CloseIcon className="text-[#DFC195]" sx={{ fontSize: 28 }} />
+            ) : (
+              <MenuIcon className="text-[#DFC195]" sx={{ fontSize: 28 }} />
+            )}
+          </button>
 
-            {/* Desktop Navigation - vertically centered */}
-            <div className="hidden md:flex items-center space-x-8 h-full">
-              {navLinks.map((link) => (
-                <NavLink
-                  key={link.path}
-                  to={link.path}
-                  className={({ isActive }) => `relative text-white font-montserrat text-lg transition-colors duration-200 hover:text-[#DFC195] ${isActive ? 'text-[#DFC195]' : ''}`}
-                >
-                  {({ isActive }) => (
-                    <div className="flex flex-col items-center">
-                      {link.name}
-                      {isActive && <hr className="absolute -bottom-2 w-full border-[#DFC195] border-b-2" />}
-                    </div>
-                  )}
-                </NavLink>
-              ))}
-            </div>
+          {/* Logo - Centered on mobile, left-aligned on desktop */}
+          <Link to="/" className="py-2 mx-auto md:mx-0 flex justify-center">
+            <img
+              src="/headerlogo.png"
+              alt="Logo"
+              className="w-56 object-contain"
+              style={{ height: '85px' }}
+            />
+          </Link>
 
-            {/* Mobile Menu Button - vertically centered */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden text-white p-2"
-            >
-              {isOpen ? (
-                <CloseIcon className="text-[#DFC195]" sx={{ fontSize: 28 }} />
-              ) : (
-                <MenuIcon className="text-[#DFC195]" sx={{ fontSize: 28 }} />
-              )}
-            </button>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8 h-full ml-auto">
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.path}
+                to={link.path}
+                className={({ isActive }) =>
+                  `relative text-white font-montserrat text-lg transition-colors duration-200 hover:text-[#DFC195] ${
+                    isActive ? 'text-[#DFC195]' : ''
+                  }`
+                }
+              >
+                {({ isActive }) => (
+                  <div className="flex flex-col items-center">
+                    {link.name}
+                    {isActive && (
+                      <hr className="absolute -bottom-2 w-full border-[#DFC195] border-b-2" />
+                    )}
+                  </div>
+                )}
+              </NavLink>
+            ))}
           </div>
         </div>
       </div>
 
       {/* Mobile Navigation */}
       <div
-  className={`
-    absolute
-    top-full // Position it directly below the navbar
-    right-0
-    w-3/4
-    bg-[#1A3D33]
-    transition-all
-    duration-300
-    ease-in-out
-    transform
-    ${isOpen ? 'block translate-x-0 opacity-100' : 'translate-x-full opacity-0 hidden'}
-    md:hidden
-    z-50
-    shadow-lg
-  `}
->
-  <div className="flex flex-col py-2">
-    {navLinks.map((link) => (
-      <NavLink
-        key={link.path}
-        to={link.path}
-        onClick={() => setIsOpen(false)}
-        className={({ isActive }) => `
-          py-3
-          px-6
-          text-white
-          font-montserrat
-          transition-colors
-          duration-200
-          ${isActive ? 'bg-[#DFC195] text-[#1A3D33]' : 'hover:bg-[#2E4A3A]'}
-        `}
+        className={`absolute top-full ledt-0 w-3/4 bg-[#1A3D33] transition-all duration-300 ease-in-out transform ${
+          isOpen ? 'block translate-x-0 opacity-100' : 'translate-x-full opacity-0 hidden'
+        } md:hidden z-50 shadow-lg`}
       >
-        {link.name}
-      </NavLink>
-    ))}
-  </div>
-</div>
-
+        <div className="flex flex-col py-2">
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.path}
+              to={link.path}
+              onClick={() => setIsOpen(false)}
+              className={({ isActive }) =>
+                `py-3 px-6 text-white font-montserrat transition-colors duration-200 ${
+                  isActive ? 'bg-[#DFC195] text-[#1A3D33]' : 'hover:bg-[#2E4A3A]'
+                }`
+              }
+            >
+              {link.name}
+            </NavLink>
+          ))}
+        </div>
+      </div>
     </nav>
   );
 };

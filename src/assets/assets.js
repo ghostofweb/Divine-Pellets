@@ -46,6 +46,21 @@ import rawImg5 from './raw_img5.jpg';
 import rawImg6 from './raw_img6.jpg';
 import rawImg7 from './raw_img7.jpg';
 import headerlogo from './headerlogo.png'
+import facebook from "./facebook.svg"
+import instagram from "./instagram.svg"
+import deeplal from "./deep-lal.jpg"
+import dhruvgoyal from "./dhruv-goyal.jpg"
+
+export const social = {
+  facebook: facebook,
+  instagram: instagram
+}
+
+export const directors = {
+  deeplal: deeplal,
+  dhruvgoyal: dhruvgoyal
+
+}
 
 export const images = [
   gImg1, gImg2, gImg3, gImg4, gImg5,

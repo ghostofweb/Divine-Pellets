@@ -1,33 +1,40 @@
-import React, { useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Title from './Title';
 import { images } from '../assets/assets';
 
 const ProductGallery = () => {
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
   const sliderRef = useRef(null);
 
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    setStartX(e.pageX - sliderRef.current.offsetLeft);
-    setScrollLeft(sliderRef.current.scrollLeft);
-  };
+  useEffect(() => {
+    const slider = sliderRef.current;
+    let intervalId;
 
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
+    const cloneImages = () => {
+      // Clone the first set of images and append them to the end for infinite scrolling
+      const firstSet = slider.querySelectorAll('.image-item');
+      firstSet.forEach((img) => {
+        const clonedImg = img.cloneNode(true);
+        slider.appendChild(clonedImg);
+      });
+    };
 
-  const handleMouseMove = (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - sliderRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // Adjust the sensitivity of the drag
-    sliderRef.current.scrollLeft = scrollLeft - walk;
-  };
+    const scrollGallery = () => {
+      if (slider.scrollLeft + slider.offsetWidth >= slider.scrollWidth) {
+        slider.scrollLeft = 0; // Reset to the start
+      } else {
+        slider.scrollLeft += 2; // Scroll by 2px (adjust speed as needed)
+      }
+    };
+
+    cloneImages(); // Clone images after the initial render
+
+    intervalId = setInterval(scrollGallery, 10); // Slow down the scroll interval for smooth animation
+
+    return () => clearInterval(intervalId); // Clean up the interval on component unmount
+  }, []);
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 py-8">
+    <div className="w-full max-w-7xl mx-auto px-4 pb-20">
       {/* Title Section */}
       <Title
         title="Product Gallery"
@@ -37,22 +44,19 @@ const ProductGallery = () => {
       {/* Gallery Slider */}
       <div
         ref={sliderRef}
-        className="flex overflow-x-auto gap-3 cursor-grab pb-4 scrollbar-hide"
-        onMouseDown={handleMouseDown}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
-        onMouseMove={handleMouseMove}
+        className="flex overflow-x-auto gap-3 cursor-grab pb-4"
         style={{
           scrollBehavior: 'smooth',
           WebkitOverflowScrolling: 'touch',
           scrollSnapType: 'x mandatory',
-          padding: '-0 px', // Optional: Add some padding to the container for a nicer feel
+          whiteSpace: 'nowrap',
+          transition: 'scroll-left 0.1s ease', // Smooth scroll transition
         }}
       >
         {images.map((image, index) => (
           <div
             key={index}
-            className="flex-none w-96 h-96 relative rounded-lg overflow-hidden scroll-snap-align-start" // Adjusted width to 56 for thinner images
+            className="image-item flex-none w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 relative rounded-lg overflow-hidden scroll-snap-align-start"
           >
             <img
               src={image}
@@ -62,6 +66,13 @@ const ProductGallery = () => {
           </div>
         ))}
       </div>
+
+      {/* Hide scrollbar */}
+      <style jsx>{`
+        .flex::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </div>
   );
 };

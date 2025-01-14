@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
     return (
-        <div className='flex flex-col sm:flex-row py-18 sm:py-10 md:py-8 lg:py-12 font-bold'>
+        <div className='flex flex-col sm:flex-row pb-24 pt-11 sm:py-72 md:py-72 lg:py-60 xl:py-36 font-bold'>
       
         {/* Hero Left side with animation */}
         <motion.div

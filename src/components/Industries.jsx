@@ -15,8 +15,8 @@ const IndustryCard = ({ name, desc, img }) => {
 
   return (
     <motion.div
-      className="relative w-full max-w-sm bg-white rounded-lg shadow-lg shadow-darkgreen overflow-hidden cursor-pointer"
-      whileHover={{ scale: 1.05 }}
+      className="relative w-full max-w-xs sm:max-w-xs md:max-w-sm bg-white rounded-lg shadow-lg shadow-darkgreen overflow-hidden cursor-pointer"
+      whileHover={{ scale: 1.14 }}
       transition={{ duration: 0.3 }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -35,7 +35,7 @@ const IndustryCard = ({ name, desc, img }) => {
       </div>
       {/* Title */}
       <div className="p-4">
-        <h3 className="text-md font-montserrat font-medium text-green-800 ">{name}</h3>
+        <h3 className="text-md font-montserrat font-medium text-green-800">{name}</h3>
       </div>
       {/* Hover or Hold Overlay */}
       <motion.div
