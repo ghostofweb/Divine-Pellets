@@ -3,7 +3,7 @@ import { images } from '../assets/assets'
 import { motion } from 'framer-motion'
 import Title from '../components/Title'
 
-const WhatWeDo = () => {
+const WhatweDo = () => {
    useEffect(() => {
       window.scrollTo(0, 0); 
     }, []);
@@ -135,4 +135,4 @@ const WhatWeDo = () => {
   )
 }
 
-export default WhatWeDo
+export default WhatweDo
