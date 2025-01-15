@@ -53,17 +53,17 @@ import rawImg4 from './raw_img4.jpg';
 import rawImg5 from './raw_img5.jpg';
 import rawImg6 from './raw_img6.jpg';
 import rawImg7 from './raw_img7.jpg';
-import rawImg8 from './raw_img7.jpg';
-import rawImg9 from './raw_img7.jpg';
-import rawImg10 from './raw_img7.jpg';
-import rawImg11 from './raw_img7.jpg';
-import rawImg12 from './raw_img7.jpg';
-import rawImg13 from './raw_img7.jpg';
-import rawImg14 from './raw_img7.jpg';
-import rawImg15 from './raw_img7.jpg';
-import rawImg16 from './raw_img7.jpg';
-import rawImg17 from './raw_img7.jpg';
-import rawImg18 from './raw_img7.jpg';
+import rawImg8 from './raw_img8.jpg';
+import rawImg9 from './raw_img9.jpg';
+import rawImg10 from './raw_img10.jpg';
+import rawImg11 from './raw_img11.jpg';
+import rawImg12 from './raw_img12.jpg';
+import rawImg13 from './raw_img13.jpg';
+import rawImg14 from './raw_img14.jpg';
+import rawImg15 from './raw_img15.jpg';
+import rawImg16 from './raw_img16.jpg';
+import rawImg17 from './raw_img17.jpg';
+import rawImg18 from './raw_img18.jpg';
 
 
 import headerlogo from './headerlogo.png'
