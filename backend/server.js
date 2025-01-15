@@ -21,12 +21,12 @@ app.use(cors(corsOptions));
 // Create email transporter with explicit SMTP configuration
 const transporter = createTransport({
   host: 'smtp.gmail.com',
-  port: 465,
-  secure: true, // use SSL
+  port: 587,
+  secure: false, // upgrade later with STARTTLS
   auth: {
     user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
+    pass: process.env.EMAIL_PASS
+  }
 });
 
 // Verify transporter configuration
