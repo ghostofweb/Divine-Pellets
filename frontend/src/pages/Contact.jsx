@@ -89,6 +89,7 @@ const Contact = () => {
       } else {
         setStatus('error');
       }
+      
     } catch (error) {
       console.error('Error sending email:', error);
       // Handle the error more precisely if the backend returns a message
