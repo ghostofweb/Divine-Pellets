@@ -5,12 +5,12 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Products from './pages/Products';
-import WhatWeDo from './pages/WhatWeDo';
 import Gallaries from './pages/gallaries';
 import NavBar from './components/NavBar';
 import ScrollToTopButton from './components/ScrollToTopButton ';
 import Footer from './components/Footer';
 import { ToastContainer, toast } from 'react-toastify';
+import WhatWeDo from './pages/Whatwedo';
 
 const App = () => {
   return (
