@@ -13,6 +13,7 @@ const corsOptions = {
   origin: [
     'http://localhost:5173',
     'https://divine-pellets.vercel.app',
+    'https://divine-pellets.vercel.app/send-data',
   ], // Replace with your frontend URL
   methods: 'GET,HEAD,POST', // Allowed HTTP methods
   credentials: true, // Allow cookies if needed
