@@ -71,7 +71,7 @@ const Contact = () => {
     setStatus('sending');  // Set sending status initially
 
     try {
-      const response = await axios.post('https://divine-pellets.vercel.app/send-email', formData);
+      const response = await axios.post('https://divine-pellets-k5b1.vercel.app/send-email', formData);
 
       console.log(response); // Check the response structure
 
