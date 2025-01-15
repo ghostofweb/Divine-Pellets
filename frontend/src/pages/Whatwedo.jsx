@@ -4,9 +4,11 @@ import { motion } from 'framer-motion'
 import Title from '../components/Title'
 
 const WhatweDo = () => {
+
    useEffect(() => {
       window.scrollTo(0, 0); 
     }, []);
+    
   return (
     <div className='py-16'>
       <Title

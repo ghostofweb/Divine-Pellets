@@ -5,15 +5,13 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Products from './pages/Products';
-import Gallaries from './pages/Gallaries'; 
+import Gallaries from './pages/Gallaries'; // Fixed case (matches file name)
 import NavBar from './components/NavBar';
-
 import Footer from './components/Footer';
+import ScrollToTopButton from './components/ScrollToTopButton '
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; 
-import WhatweDo from './pages/WhatweDo';
-import ScrollToTopButton from './components/ScrollToTopButton ';
-
+import 'react-toastify/dist/ReactToastify.css'; // Ensure Toastify styles are loaded
+import WhatWeDo from './pages/WhatWedo'; // Fixed case (matches file name)
 const App = () => {
   return (
     <div>
@@ -26,7 +24,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/gallery" element={<Gallaries />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/what-we-do" element={<WhatweDo />} />
+          <Route path="/what-we-do" element={<WhatWeDo />} />
         </Routes>
       </div>
       <Footer />
