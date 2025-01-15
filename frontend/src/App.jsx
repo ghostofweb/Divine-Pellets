@@ -6,7 +6,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Products from './pages/Products';
 import Gallaries from './pages/Gallaries'; 
-import WhatWeDo from './pages/WhatWeDo';
+import What from './pages/What';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton '
@@ -25,7 +25,7 @@ const App = () => {
           <Route path="/contact" element={<Contact/>} />
           <Route path="/gallery" element={<Gallaries/>} />
           <Route path="/products" element={<Products/>} />
-          <Route path="/what-we-do" element={<WhatWeDo/>} />
+          <Route path="/what-we-do" element={<What/>} />
         </Routes>
       </div>
       <Footer />
