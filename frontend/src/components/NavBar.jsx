@@ -43,7 +43,7 @@ const NavBar = () => {
           </button>
 
           {/* Logo - Centered on mobile, left-aligned on desktop */}
-          <Link to="/" className="py-2 mx-auto md:mx-0 flex justify-center">
+          <Link to="/" className="py-2 pl-3 mx-auto md:mx-0 flex justify-center">
             <img
               src="/headerlogo.png"
               alt="Logo"
@@ -53,7 +53,7 @@ const NavBar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8 h-full ml-auto">
+          <div className="hidden md:flex pr-10 items-center space-x-8 h-full ml-auto">
             {navLinks.map((link) => (
               <NavLink
                 key={link.path}
