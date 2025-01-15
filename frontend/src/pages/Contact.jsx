@@ -12,6 +12,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { motion, AnimatePresence } from 'framer-motion';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import { toast } from 'react-toastify';
 
 const theme = createTheme({
   palette: {
@@ -45,6 +46,7 @@ const Contact = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  
   const [copiedItem, setCopiedItem] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
@@ -75,6 +77,7 @@ const Contact = () => {
 
       if (response.data.success) {
         setStatus('success');
+        toast.success("Thank you for contacting us! We will get back to you soon.");
         setFormData({
           name: '',
           phone: '',

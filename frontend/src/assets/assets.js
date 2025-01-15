@@ -53,6 +53,19 @@ import rawImg4 from './raw_img4.jpg';
 import rawImg5 from './raw_img5.jpg';
 import rawImg6 from './raw_img6.jpg';
 import rawImg7 from './raw_img7.jpg';
+import rawImg8 from './raw_img7.jpg';
+import rawImg9 from './raw_img7.jpg';
+import rawImg10 from './raw_img7.jpg';
+import rawImg11 from './raw_img7.jpg';
+import rawImg12 from './raw_img7.jpg';
+import rawImg13 from './raw_img7.jpg';
+import rawImg14 from './raw_img7.jpg';
+import rawImg15 from './raw_img7.jpg';
+import rawImg16 from './raw_img7.jpg';
+import rawImg17 from './raw_img7.jpg';
+import rawImg18 from './raw_img7.jpg';
+
+
 import headerlogo from './headerlogo.png'
 import facebook from "./facebook.svg"
 import instagram from "./instagram.svg"
@@ -76,6 +89,82 @@ export const images = [
   gImg11,gImg12,gImg13,gImg14,gImg15,
   gImg16,gImg17
 ];
+
+export const raw = [
+  {
+    name: "Groundnut Shell",
+    image: rawImg1
+  },
+  {
+    name: "SOYABEAN HUSK",
+    image: rawImg2
+  },
+  {
+    name: "Pine Needle",
+    image: rawImg3
+  },
+  {
+    name: "Baggase",
+    image: rawImg4
+  },
+  {
+    name: "Straw",
+    image: rawImg5
+  },
+  {
+    name: "Mustard Husk",
+    image: rawImg6
+  },
+  {
+    name: "Cotton",
+    image: rawImg7
+  },
+  {
+    name: "Cotton Stalk",
+    image: rawImg8
+  },
+  {
+    name: "Palm Kernal",
+    image: rawImg9
+  },
+  {
+    name: "Juliflora",
+    image: rawImg10
+  },
+  {
+    name: "Soya Husk",
+    image: rawImg11
+  },
+  {
+    name: "Cobs",
+    image: rawImg12
+  },
+  {
+    name: "PADDY STRAW",
+    image: rawImg13
+  },
+  {
+    name: "AGROWATE STRAW",
+    image: rawImg14
+  },
+  {
+    name: "COFEE SHELL",
+    image: rawImg15
+  },
+  {
+    name: "MSW COMPOST",
+    image: rawImg16
+  },
+  {
+    name: "WOOD",
+    image: rawImg17
+  },
+  {
+    name: "COCONUT SHELL",
+    image: rawImg18
+  }
+];
+
 
 export const whatarebiomass = "Biomass pellets are created by compressing finely milled organic materials, such as wood or agricultural residues, into small, dense cylinders. The process begins with hammer-milling the raw material into a uniform, dough-like consistency. This material is then fed into a pellet press, where it is pushed through a die with small holes, typically 6 mm in diameter, though larger sizes like 8 mm are also common"
 

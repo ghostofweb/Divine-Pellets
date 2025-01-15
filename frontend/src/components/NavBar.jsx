@@ -7,17 +7,19 @@ const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
+   
+
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' },
-    { name: 'Gallery', path: '/gallery' },
     { name: 'Products', path: '/products' },
+    { name: 'About', path: '/about' },
     { name: 'What We Do', path: '/whatwedo' },
+    { name: 'Gallery', path: '/gallery' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   return (

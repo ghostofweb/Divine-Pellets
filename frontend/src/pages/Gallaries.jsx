@@ -21,7 +21,7 @@ import Title from '../components/Title'
 import { images } from '../assets/assets';
 
 
-const Gallery = () => {
+const Gallaries = () => {
   useEffect(() => {
     window.scrollTo(0, 0); 
   }, []);
@@ -205,4 +205,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default Gallaries;

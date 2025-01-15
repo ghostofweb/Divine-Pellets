@@ -10,13 +10,14 @@ import Gallaries from './pages/gallaries';
 import NavBar from './components/NavBar';
 import ScrollToTopButton from './components/ScrollToTopButton ';
 import Footer from './components/Footer';
+import { ToastContainer, toast } from 'react-toastify';
 
 const App = () => {
   return (
     <div>
       <NavBar/>
       <div className="pt-[4rem] px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] bg-[#FDFBF6]">  
-        {/* Adjusted padding-top to avoid content being hidden behind the fixed NavBar */}
+        <ToastContainer/>
         <Routes>  
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
