@@ -8,7 +8,7 @@ const WhatweDo = () => {
    useEffect(() => {
       window.scrollTo(0, 0); 
     }, []);
-    
+
   return (
     <div className='py-16'>
       <Title
@@ -137,4 +137,4 @@ const WhatweDo = () => {
   )
 }
 
-export default WhatweDo
+export default WhatweDo;
