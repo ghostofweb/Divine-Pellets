@@ -11,8 +11,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton '
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; // Ensure Toastify styles are loaded
- // Fixed case (matches file name)
+import 'react-toastify/dist/ReactToastify.css';
 const App = () => {
   return (
     <div>
