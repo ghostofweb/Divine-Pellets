@@ -101,8 +101,6 @@ const Contact = () => {
     }
   };
 
-
-
   const contactCards = [
     {
       icon: <LocationOnIcon sx={{ fontSize: 40, color: '#ffffff' }} />,
