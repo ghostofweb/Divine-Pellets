@@ -26,10 +26,16 @@ const transporter = createTransport({
   },
 });
 
+// Debugging: Log the transporter creation
+console.log("Transporter created with user:", process.env.EMAIL_USER);
+
 app.post('/send-email', async (req, res) => {
   const { name, phone, email, company, subject, message } = req.body;
 
+  console.log("Received request to send email:", req.body);
+
   if (!name || !email || !message) {
+    console.log("Missing required fields: name, email, or message");
     return res.status(400).json({ error: 'Please provide all required fields' });
   }
 
@@ -47,11 +53,16 @@ Message: ${message}
     `,
   };
 
+  // Debugging: Log mail options before sending
+  console.log("Mail options:", mailOptions);
+
   try {
+    console.log("Attempting to send email...");
     await transporter.sendMail(mailOptions);
+    console.log("Email sent successfully!");
     res.status(200).json({ success: 'Email sent successfully!' });
   } catch (error) {
-    console.error(error);
+    console.error("Error sending email:", error);
     res.status(500).json({ error: 'Failed to send email' });
   }
 });
@@ -64,4 +75,5 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
 export default app;

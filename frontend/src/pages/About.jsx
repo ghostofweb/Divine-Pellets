@@ -56,7 +56,7 @@ const About = () => {
               <p className='pl-2 font-bold font-montserrat'>Managing Director</p>
             </div>
             <p className='mt-4 font-montserrat'>
-            The Managing Director, envisioned the company to address the growing need for sustainable energy. With his innovative ideas and leadership skills, he has steered the company towards excellence.
+            The Managing Director, envisioned the company to address the growing need for sustainable energy. With his innovative ideas and leadership skills, he has steered the company towards excellence. we drive success through innovative business strategies, fostering growth, excellence, and sustainable solutions in the industry.
             </p>
           </div>
       </motion.div>
@@ -100,14 +100,14 @@ const About = () => {
       >
          <div className='w-full lg:w-1/2'>
             <h1 className='text-lg sm:text-4xl font-cinzel font-bold text-[#0c301c]'>
-              Dhruv Goyal
+              Dhruv Goel
             </h1>
             <div className='flex flex-row items-center'>
-              <p className='pr-2 font-bold font-montserrat'>Director of Accountancy</p>
+              <p className='pr-2 font-bold font-montserrat'>Managing Director</p>
               <div className="w-8 sm:w-12 h-[1px] sm:h-[2px] bg-[#020e0b]" />
             </div>
             <p className='mt-4 font-montserrat'>
-            The Director of Accountancy ensures the financial stability and smooth operation of Divine Pellets. His meticulous approach to financial management is the backbone of the company's growth.
+            At divinepellets, we are led by our visionary Managing Director,Dhruv Goel, who drives innovation and excellence. Backed by a skilled and collaborative team, we are committed to delivering outstanding results and fostering a culture of growth and integrity. Together, we aim to set new standards in the industry.
             </p>
           </div>
       </motion.div>
@@ -133,7 +133,7 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <Typography variant="body1" className="text-gray-700 leading-relaxed mb-6">
-              Divine Pellets emerged from the innovative minds of two extraordinary young entrepreneurs, Deep Lal and Dhruv Goyal. Despite their youth as Class 11 students, their vision for revolutionizing renewable energy has proven that passion knows no age limits.
+              Divine Pellets emerged from the innovative minds of two extraordinary young entrepreneurs, Deep Lal and Dhruv Goel. Despite their youth as Class 11 students, their vision for revolutionizing renewable energy has proven that passion knows no age limits.
             </Typography>
             <Grid container spacing={4} className="mb-6">
               <Grid item xs={12} md={6}>
@@ -158,7 +158,7 @@ const About = () => {
                 >
                   <Card className="p-6 h-full bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300">
                     <Typography variant="h6" className="text-green-800 font-bold mb-3">
-                      Dhruv Goyal - Director of Accountancy
+                      Dhruv Goel - Director of Accountancy
                     </Typography>
                     <Typography className="text-gray-600">
                       Managing financial operations with precision, Dhruv's expertise ensures robust growth and operational efficiency.
