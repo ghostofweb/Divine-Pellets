@@ -64,16 +64,17 @@ import rawImg15 from './raw_img15.jpg';
 import rawImg16 from './raw_img16.jpg';
 import rawImg17 from './raw_img17.jpg';
 import rawImg18 from './raw_img18.jpg';
-
+import mm6 from "./6mm.jpg"
+import mm8 from "./8mm.jpg"
+import mm12 from "./12mm.jpg"
+import mm16 from "./16mm.jpg"
 
 import headerlogo from './headerlogo.png'
-import facebook from "./facebook.svg"
 import instagram from "./instagram.svg"
 import deeplal from "./deep-lal.jpg"
 import dhruvgoyal from "./dhruv-goyal.jpg"
 
 export const social = {
-  facebook: facebook,
   instagram: instagram
 }
 
@@ -82,7 +83,7 @@ export const directors = {
   dhruvgoyal: dhruvgoyal
 
 }
-
+export const mm = [mm6,mm8,mm12,mm16]
 export const images = [
   gImg1, gImg2, gImg3, gImg4, gImg5,
   gImg6, gImg7, gImg8, gImg9, gImg10,

@@ -111,14 +111,14 @@ const Contact = () => {
     {
       icon: <PhoneIcon sx={{ fontSize: 40, color: '#ffffff' }} />,
       title: "Contact",
-      content: "+1 (555) 123-4567",
-      copyValue: "+15551234567"
+      content: "+91 85958 31461",
+      copyValue: "+918595831461"
     },
     {
       icon: <EmailIcon sx={{ fontSize: 40, color: '#ffffff' }} />,
       title: "Email",
-      content: "contact@yourcompany.com",
-      copyValue: "contact@yourcompany.com"
+      content: "divinepellets@gmail.com",
+      copyValue: "divinepellets@gmail.com"
     }
   ];
 

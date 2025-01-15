@@ -25,7 +25,10 @@ const Footer = () => {
                             { name: 'About', link: '/about' },
                             { name: 'What we do', link: '/what-we-do' },
                             { name: 'Gallery', link: '/gallery' },
-                            { name: 'Make an Inquiry', link: '/contact' }
+                            { name: 'Products', link: '/products' },
+                            { name: 'Make an Inquiry', link: '/contact' },
+                            { name: 'Home', link: '/' },
+
                         ].map((item) => (
                             <li key={item.name}>
                                 <Link
@@ -44,13 +47,13 @@ const Footer = () => {
                     <h3 className="text-lg md:text-xl font-semibold uppercase">Contact Info</h3>
                     <div className="space-y-4">
                         <div className="flex items-center space-x-2 justify-center md:justify-start">
-                            <span className="text-gray-300">+91 73597 72393</span>
+                            <span className="text-gray-300">+91 85958 31461</span>
                         </div>
                         <div className="flex items-center space-x-2 justify-center md:justify-start">
-                            <span className="text-gray-300">+91 92656 50051</span>
+                            <span className="text-gray-300">+91 99715 22635</span>
                         </div>
                         <div className="flex items-center space-x-2 justify-center md:justify-start">
-                            <span className="text-gray-300">example@gmail.com</span>
+                            <span className="text-gray-300">divinepellets@gmail.com</span>
                         </div>
 
                         {/* Social Links */}

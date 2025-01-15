@@ -30,8 +30,8 @@ import {
     Star,
     TrendingUp
 } from '@mui/icons-material';
-import { images } from '../assets/assets';
 import Title from './Title';
+import { mm } from '../assets/assets';
 
 const ProductShowcase = () => {
     const navigate = useNavigate();
@@ -107,7 +107,7 @@ const ProductShowcase = () => {
           size: '6mm',
           title: '6mm Bio Pellets',
           description: 'Ideal for small-scale residential heating systems and compact boilers, offering easy ignition and consistent feeding.',
-          image: images[0],
+          image: mm[0],
           application: [
             'Residential Heating Systems',
             'Compact Boilers',
@@ -120,7 +120,7 @@ const ProductShowcase = () => {
           size: '8mm',
           title: '8mm Bio Pellets',
           description: 'Suitable for medium-sized residential and small commercial applications, balancing energy density and feeding consistency.',
-          image: images[1],
+          image: mm[1],
           application: [
             'Medium-Sized Residential Heating',
             'Small Commercial Boilers',
@@ -133,7 +133,7 @@ const ProductShowcase = () => {
           size: '12mm',
           title: '12mm Bio Pellets',
           description: 'Designed for large commercial heating systems and industrial applications, providing high energy output and durability.',
-          image: images[2],
+          image: mm[2],
           application: [
             'Large Commercial Heating Systems',
             'Industrial Boilers',
@@ -146,7 +146,7 @@ const ProductShowcase = () => {
           size: '16mm',
           title: '16mm Bio Pellets',
           description: 'Optimal for industrial-scale operations and power generation facilities, offering maximum power and heavy-duty performance.',
-          image: images[3],
+          image: mm[3],
           application: [
             'Industrial-Scale Boilers',
             'Power Generation Facilities',
@@ -317,7 +317,7 @@ const ProductShowcase = () => {
           >
             <Card
               sx={{
-                height: '100%',
+                height: '85%',
                 display: 'flex',
                 flexDirection: 'column',
                 background: 'linear-gradient(145deg, #ffffff, #f8f9fa)',
@@ -467,7 +467,7 @@ const ProductShowcase = () => {
                                                 '& svg': { opacity: 0.8 }
                                             }}
                                         >
-                                            <LocalShipping sx={{ mr: 1 }} /> Minimum Order: 10 Ton
+                                            <LocalShipping sx={{ mr: 1 }} /> Minimum Order: 10 - 30kg
                                         </Typography>
                                     </Box>
 
