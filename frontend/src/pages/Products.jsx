@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ProductShowcase from '../components/ProductShowcase'
 import Title from '../components/Title'
 import { motion } from 'framer-motion'
@@ -8,6 +8,9 @@ import StarIcon from '@mui/icons-material/Star';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const Products = () => {
+   useEffect(() => {
+      window.scrollTo(0, 0); 
+    }, []);
   return (
     <div className='pb-16'>
       <ProductShowcase/>
@@ -139,12 +142,12 @@ const Products = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative overflow-hidden group"
+              className="relative overflow-hidden group hover:scale-50"
             >
               <img
                 alt={item.name}
                 src={item.image}
-                className="w-full h-[200px] object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out"
+                className="w-full h-[200px] object-cover group-hover:scale-110 transition-transform duration-300 ease-in-out"
               />
               <div className="absolute bottom-0 w-full h-20 bg-gradient-to-t from-green-400 to-transparent"></div>
               <div className="absolute bottom-5 left-5 text-white font-semibold text-lg">{item.name}</div>

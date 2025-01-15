@@ -13,8 +13,7 @@ const Footer = () => {
                     </div>
                     <h2 className="text-xl md:text-2xl font-semibold text-white text-center md:text-left">Divine Pellets</h2>
                     <p className="text-gray-300 max-w-md text-center md:text-left">
-                        We have experts having 20 years of experience in the production of biomass pellets with various kinds of raw materials.
-                        We are a leading manufacturer and supplier of high-quality biomass pellets, committed to providing sustainable energy solutions.
+                    At Divine Pellets, we are passionate about producing high-quality biomass pellets from a wide range of raw materials. As a new and dynamic player in the industry, we are focused on providing sustainable energy solutions. Our dedicated team works tirelessly to create efficient, eco-friendly pellets that contribute to a cleaner and greener future.
                     </p>
                 </div>
 
