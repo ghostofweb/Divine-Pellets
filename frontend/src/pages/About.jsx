@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { assets, directors } from '../assets/assets'
 import { motion } from 'framer-motion'
 import Title from '../components/Title'
-import { TeamCard } from '../components/TeamCard'
+import  TeamCard  from '../components/TeamCard'
 import { Box, Container, Typography, Paper, Grid, Card } from '@mui/material';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
@@ -316,8 +316,8 @@ const About = () => {
         key={index}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true }} // Ensures the animation happens only once when it enters the viewport
-        transition={{ duration: 0.6, delay: index * 0.2 }} // Delay for staggered effect
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: index * 0.2 }}
       >
         <TeamCard
           name={member.name}

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import {
   Dialog,
   DialogContent,
   IconButton,
-  Fade,
   Box,
   Typography,
   Card,
@@ -22,100 +22,110 @@ const TeamCard = ({ name, role, image }) => {
   return (
     <>
       {/* Team Card */}
-      <Fade in timeout={600}>
-        <Card 
-          sx={{
-            maxWidth: '100%',
-            mb: 4,
-            transition: 'all 0.3s ease-in-out',
-            '&:hover': {
-              transform: 'scale(1.02)',
-              boxShadow: (theme) => theme.shadows[10],
-            },
+      <Card 
+        sx={{
+          height: '18rem', // 64 in rem units
+          display: 'flex',
+          flexDirection: 'column',
+          transition: 'all 0.3s ease-in-out',
+          overflow: 'hidden', // Ensure content doesn't overflow
+          '&:hover': {
+            transform: 'scale(1.02)',
+            boxShadow: (theme) => theme.shadows[10],
+          },
+        }}
+      >
+        <Box 
+          sx={{ 
+            position: 'relative',
+            height: '18rem', // Leave room for content below
+            overflow: 'hidden' // Hide image overflow
           }}
         >
-          <Box sx={{ position: 'relative' }}>
-            <CardMedia
-              component="img"
-              height="300"
-              image={image || "/api/placeholder/400/320"}
-              alt={name}
-              sx={{
-                cursor: 'pointer',
-                transition: 'transform 0.3s ease-in-out',
-                '&:hover': {
-                  transform: 'scale(1.05)',
-                },
-              }}
-              onClick={handleOpen}
-            />
-            <IconButton
-              sx={{
-                position: 'absolute',
-                right: 8,
-                top: 8,
-                backgroundColor: 'rgba(255, 255, 255, 0.8)',
-                '&:hover': {
-                  backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                },
-              }}
-              onClick={handleOpen}
-            >
-              <ZoomInIcon />
-            </IconButton>
-          </Box>
-          <CardContent>
-            <Typography 
-              variant="h5" 
-              component="h3"
+          <CardMedia
+            component="img"
+            image={image || "/api/placeholder/400/320"}
+            alt={name}
+            sx={{
+              cursor: 'pointer',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              transition: 'transform 0.3s ease-in-out',
+              '&:hover': {
+                transform: 'scale(1.05)',
+              },
+            }}
+            onClick={handleOpen}
+          />
+          <IconButton
+            sx={{
+              position: 'absolute',
+              right: 8,
+              top: 8,
+              backgroundColor: 'rgba(255, 255, 255, 0.8)',
+              '&:hover': {
+                backgroundColor: 'rgba(255, 255, 255, 0.9)',
+              },
+            }}
+            onClick={handleOpen}
+          >
+            <ZoomInIcon />
+          </IconButton>
+        </Box>
+        <CardContent sx={{ flexShrink: 0, py: 1.5 }}>
+          <Typography 
+            variant="h6" 
+            component="h3"
+            sx={{ 
+              fontWeight: 600,
+              color: 'primary.main',
+              mb: 0.5,
+              lineHeight: 1.2
+            }}
+          >
+            {name}
+          </Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Box 
               sx={{ 
-                fontWeight: 600,
-                color: 'primary.main',
-                mb: 1
-              }}
+                width: 32, 
+                height: 2, 
+                backgroundColor: 'text.primary',
+                mr: 1
+              }} 
+            />
+            <Typography 
+              variant="body2" 
+              color="text.secondary"
+              sx={{ fontWeight: 500 }}
             >
-              {name}
+              {role}
             </Typography>
-            <Box sx={{ display: 'flex', alignItems: 'center', mt: 1 }}>
-              <Box 
-                sx={{ 
-                  width: 32, 
-                  height: 2, 
-                  backgroundColor: 'text.primary',
-                  mr: 1
-                }} 
-              />
-              <Typography 
-                variant="subtitle1" 
-                color="text.secondary"
-                sx={{ fontWeight: 500 }}
-              >
-                {role}
-              </Typography>
-            </Box>
-          </CardContent>
-        </Card>
-      </Fade>
+          </Box>
+        </CardContent>
+      </Card>
 
-      {/* Dialog */}
+      {/* Full Screen Dialog */}
       <Dialog
         open={open}
         onClose={handleClose}
-        maxWidth="lg"
+        maxWidth="xl"
         fullWidth
-        TransitionComponent={Fade}
-        TransitionProps={{ timeout: 500 }}
         PaperProps={{
           sx: {
             bgcolor: 'background.paper',
             borderRadius: 2,
             overflow: 'hidden',
-            maxHeight: '90vh',
+            maxHeight: '95vh',
+            m: { xs: 1, sm: 2 },
           }
         }}
       >
         <DialogContent sx={{ p: 0, position: 'relative' }}>
-          {/* Close Button */}
           <IconButton
             onClick={handleClose}
             sx={{
@@ -132,11 +142,10 @@ const TeamCard = ({ name, role, image }) => {
             <CloseIcon />
           </IconButton>
 
-          {/* Image Container */}
           <Box
             sx={{
               width: '100%',
-              height: '75vh',
+              height: '90vh',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
@@ -154,7 +163,6 @@ const TeamCard = ({ name, role, image }) => {
             />
           </Box>
 
-          {/* Info Section */}
           <Box
             sx={{
               position: 'absolute',
