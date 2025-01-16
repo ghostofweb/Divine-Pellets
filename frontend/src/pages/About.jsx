@@ -161,7 +161,7 @@ const About = () => {
                       Dhruv Goel - Managing Director
                     </Typography>
                     <Typography className="text-gray-600">
-                    Managing financial operations with precision, Dhruv, as Managing Director, ensures robust growth and operational efficiency.
+                    As Head of Team Management, Dhruv ensures seamless collaboration and operational efficiency by fostering teamwork, optimizing processes, and driving strategic growth.
                     </Typography>
                   </Card>
                 </motion.div>
