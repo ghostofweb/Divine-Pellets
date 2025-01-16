@@ -72,7 +72,10 @@ import mm16 from "./16mm.jpg"
 import headerlogo from './headerlogo.png'
 import instagram from "./instagram.svg"
 import deeplal from "./deep-lal.jpg"
-import dhruvgoyal from "./dhruv-goyal.jpg"
+import dhruvgoyal from "./dhruv.jpg"
+import finance from "./finance.jpg"
+import marketing from "./marketing.jpg"
+import rawmaterial from "./rawmaterial.jpg"
 
 export const social = {
   instagram: instagram
@@ -80,7 +83,11 @@ export const social = {
 
 export const directors = {
   deeplal: deeplal,
-  dhruvgoyal: dhruvgoyal
+  dhruvgoyal: dhruvgoyal,
+  finance:finance,
+  marketing:marketing,
+  rawmaterial:rawmaterial
+
 
 }
 export const mm = [mm6,mm8,mm12,mm16]

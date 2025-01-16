@@ -15,24 +15,24 @@ const About = () => {
   }, []);
   const teamMembers = [
     {
-      name: "Sarah Anderson",
+      name: "Sanjeev Agwarwaal",
       role: "Head of Marketing Department",
       image: directors.deeplal
     },
     {
-      name: "Michael Chen",
-      role: "Vice President of Raw Materials",
-      image: directors.deeplal
-    },
-    {
-      name: "Emma Thompson",
-      role: "Head of Sales Department",
-      image: directors.deeplal
-    },
-    {
-      name: "James Wilson",
+      name: "Amandeep Singh",
       role: "Head of Finance",
-      image: directors.deeplal
+      image: directors.finance
+    },
+    {
+      name: "Vishesh Bhatia",
+      role: "Head of Sales Department",
+      image: directors.marketing
+    },
+    {
+      name: "Rakesh Kumar Verma",
+      role: "Head of Raw Material",
+      image: directors.rawmaterial
     }
   ];
 
@@ -87,7 +87,7 @@ const About = () => {
       >
       <img
   className="w-full h-[40rem] object-cover sm:w-[25rem] shadow-lg shadow-black rounded-lg"
-  src={directors.deeplal}
+  src={directors.dhruvgoyal}
   alt="Hero"
 /> 
 </motion.div>
