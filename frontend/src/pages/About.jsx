@@ -308,26 +308,27 @@ const About = () => {
 
 
 
-<Title title='Our Team' />
-      <div className='container mx-auto px-4'>
-      <div className='flex flex-wrap justify-center gap-8'>
-  {teamMembers.map((member, index) => (
-    <motion.div
-      key={index}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }} // Ensures the animation happens only once when it enters the viewport
-      transition={{ duration: 0.6, delay: index * 0.2 }} // Delay for staggered effect
-    >
-      <TeamCard
-        name={member.name}
-        role={member.role}
-        image={member.image}
-      />
-    </motion.div>
-  ))}
+<Title title="Our Team" />
+<div className="container mx-auto px-4">
+  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-8 justify-center">
+    {teamMembers.map((member, index) => (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }} // Ensures the animation happens only once when it enters the viewport
+        transition={{ duration: 0.6, delay: index * 0.2 }} // Delay for staggered effect
+      >
+        <TeamCard
+          name={member.name}
+          role={member.role}
+          image={member.image}
+        />
+      </motion.div>
+    ))}
+  </div>
 </div>
-      </div>
+
     </div>
   )
 }

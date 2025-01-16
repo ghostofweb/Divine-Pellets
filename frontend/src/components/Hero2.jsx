@@ -46,7 +46,7 @@ const Hero2 = () => {
           className='w-full flex flex-col justify-center items-center'
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.25 }}
         >
           <Title
             title={"Mission of Our Project"}

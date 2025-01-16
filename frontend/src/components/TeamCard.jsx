@@ -9,7 +9,7 @@ export const TeamCard = ({ name, role, image }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       whileHover={{
-        scale: 1.15,
+        scale: 1.05,
         boxShadow: '0 10px 20px rgba(0, 0, 0, 0.2)',
         transition: { duration: 0.3 },
       }}
