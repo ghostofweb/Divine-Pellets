@@ -158,10 +158,10 @@ const About = () => {
                 >
                   <Card className="p-6 h-full bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300">
                     <Typography variant="h6" className="text-green-800 font-bold mb-3">
-                      Dhruv Goel - Director of Accountancy
+                      Dhruv Goel - Managing Director
                     </Typography>
                     <Typography className="text-gray-600">
-                      Managing financial operations with precision, Dhruv's expertise ensures robust growth and operational efficiency.
+                    Managing financial operations with precision, Dhruv, as Managing Director, ensures robust growth and operational efficiency.
                     </Typography>
                   </Card>
                 </motion.div>

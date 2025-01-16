@@ -7,8 +7,6 @@ const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-   
-
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
@@ -32,10 +30,10 @@ const NavBar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between md:justify-start relative">
-          {/* Mobile Menu Button - Left Side */}
+          {/* Mobile Menu Button - Right Side */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white p-2 absolute left-0"
+            className="md:hidden text-white p-2 absolute right-0"
           >
             {isOpen ? (
               <CloseIcon className="text-[#DFC195]" sx={{ fontSize: 28 }} />
@@ -82,8 +80,8 @@ const NavBar = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`absolute top-full ledt-0 w-3/4 bg-[#1A3D33] transition-all duration-300 ease-in-out transform ${
-          isOpen ? 'block translate-x-0 opacity-100' : 'translate-x-full opacity-0 hidden'
+        className={`absolute top-full right-0 w-3/4 bg-[#1A3D33] transition-all duration-300 ease-in-out transform ${
+          isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0 hidden'
         } md:hidden z-50 shadow-lg`}
       >
         <div className="flex flex-col py-2">
