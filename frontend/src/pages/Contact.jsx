@@ -13,6 +13,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { toast } from 'react-toastify';
+import { useLocation } from 'react-router-dom';
 
 const theme = createTheme({
   palette: {
@@ -46,14 +47,16 @@ const Contact = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
+  const location =  useLocation();
+  const { state } = location;
+  const subject = state?.subject || "";
   const [copiedItem, setCopiedItem] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: '',
     company: '',
-    subject: '',
+    subject: subject || '',
     message: ''
   });
   const [status, setStatus] = useState('');
@@ -83,7 +86,7 @@ const Contact = () => {
           phone: '',
           email: '',
           company: '',
-          subject: '',
+          subject: subject || "",
           message: ''
         });
       } else {
@@ -132,6 +135,14 @@ const Contact = () => {
     }
   };
 
+  useEffect(() => {
+    if (subject) {
+      setFormData(prevData => ({
+        ...prevData,
+        subject: subject
+      }));
+    }
+  }, [subject]);
   return (
     <ThemeProvider theme={theme}>
       <motion.div

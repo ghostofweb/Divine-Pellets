@@ -222,7 +222,9 @@ const ProductShowcase = () => {
     );
 
     const handleEnquiry = (size) => {
-        navigate('/contact', { state: { subject: `Enquiry for ${size} Pellets` } });
+        navigate('/contact', {state:{
+            subject:`Enquiry for ${size} Bio Pellets`,
+        }});
     };
 
     return (
