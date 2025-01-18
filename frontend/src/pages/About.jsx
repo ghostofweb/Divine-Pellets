@@ -15,13 +15,8 @@ const About = () => {
   }, []);
   const teamMembers = [
     {
-      name: "Sanjeev Agwarwaal",
-      role: "Head of Marketing Department",
-      image: directors.deeplal
-    },
-    {
       name: "Amandeep Singh",
-      role: "Head of Finance",
+      role: "Vice President of Marketing and Head of Finance Department",
       image: directors.finance
     },
     {
@@ -310,24 +305,28 @@ const About = () => {
 
 <Title title="Our Team" />
 <div className="container mx-auto px-4">
-  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-8 justify-center">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
     {teamMembers.map((member, index) => (
       <motion.div
         key={index}
+        className={`flex justify-center ${index === 2 ? 'col-span-full' : ''}`}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: index * 0.2 }}
       >
-        <TeamCard
-          name={member.name}
-          role={member.role}
-          image={member.image}
-        />
+        <div className="w-full max-w-xl">
+          <TeamCard
+            name={member.name}
+            role={member.role}
+            image={member.image}
+          />
+        </div>
       </motion.div>
     ))}
   </div>
 </div>
+
 
     </div>
   )

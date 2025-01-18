@@ -22,92 +22,95 @@ const TeamCard = ({ name, role, image }) => {
   return (
     <>
       {/* Team Card */}
-      <Card 
+      <Card
+  sx={{
+    height: '22rem', // Increased height for the card
+    display: 'flex',
+    flexDirection: 'column',
+    transition: 'all 0.3s ease-in-out',
+    overflow: 'hidden',
+    '&:hover': {
+      transform: 'scale(1.02)',
+      boxShadow: (theme) => theme.shadows[10],
+    },
+  }}
+>
+  <Box
+    sx={{
+      position: 'relative',
+      height: '16rem', // Increased height for the image container
+      overflow: 'hidden',
+    }}
+  >
+    <CardMedia
+      component="img"
+      image={image || "/api/placeholder/400/320"}
+      alt={name}
+      sx={{
+        cursor: 'pointer',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        objectPosition: 'top',
+        clipPath: 'none', // Ensures the entire image area is visible
+        transition: 'transform 0.3s ease-in-out',
+        '&:hover': {
+          transform: 'scale(1.05)',
+        },
+      }}
+      onClick={handleOpen}
+    />
+    <IconButton
+      sx={{
+        position: 'absolute',
+        right: 8,
+        top: 8,
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        '&:hover': {
+          backgroundColor: 'rgba(255, 255, 255, 0.9)',
+        },
+      }}
+      onClick={handleOpen}
+    >
+      <ZoomInIcon />
+    </IconButton>
+  </Box>
+  <CardContent sx={{ flexShrink: 0, py: 1.5 }}>
+    <Typography
+      variant="h6"
+      component="h3"
+      sx={{
+        fontWeight: 600,
+        color: 'primary.main',
+        mb: 0.5,
+        lineHeight: 1.2,
+      }}
+    >
+      {name}
+    </Typography>
+    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+      <Box
         sx={{
-          height: '18rem', // 64 in rem units
-          display: 'flex',
-          flexDirection: 'column',
-          transition: 'all 0.3s ease-in-out',
-          overflow: 'hidden', // Ensure content doesn't overflow
-          '&:hover': {
-            transform: 'scale(1.02)',
-            boxShadow: (theme) => theme.shadows[10],
-          },
+          width: 32,
+          height: 2,
+          backgroundColor: 'text.primary',
+          mr: 1,
         }}
+      />
+      <Typography
+        variant="body2"
+        color="text.secondary"
+        sx={{ fontWeight: 500 }}
       >
-        <Box 
-          sx={{ 
-            position: 'relative',
-            height: '18rem', // Leave room for content below
-            overflow: 'hidden' // Hide image overflow
-          }}
-        >
-          <CardMedia
-            component="img"
-            image={image || "/api/placeholder/400/320"}
-            alt={name}
-            sx={{
-              cursor: 'pointer',
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              transition: 'transform 0.3s ease-in-out',
-              '&:hover': {
-                transform: 'scale(1.05)',
-              },
-            }}
-            onClick={handleOpen}
-          />
-          <IconButton
-            sx={{
-              position: 'absolute',
-              right: 8,
-              top: 8,
-              backgroundColor: 'rgba(255, 255, 255, 0.8)',
-              '&:hover': {
-                backgroundColor: 'rgba(255, 255, 255, 0.9)',
-              },
-            }}
-            onClick={handleOpen}
-          >
-            <ZoomInIcon />
-          </IconButton>
-        </Box>
-        <CardContent sx={{ flexShrink: 0, py: 1.5 }}>
-          <Typography 
-            variant="h6" 
-            component="h3"
-            sx={{ 
-              fontWeight: 600,
-              color: 'primary.main',
-              mb: 0.5,
-              lineHeight: 1.2
-            }}
-          >
-            {name}
-          </Typography>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Box 
-              sx={{ 
-                width: 32, 
-                height: 2, 
-                backgroundColor: 'text.primary',
-                mr: 1
-              }} 
-            />
-            <Typography 
-              variant="body2" 
-              color="text.secondary"
-              sx={{ fontWeight: 500 }}
-            >
-              {role}
-            </Typography>
-          </Box>
-        </CardContent>
-      </Card>
+        {role}
+      </Typography>
+    </Box>
+  </CardContent>
+</Card>
+
 
       {/* Full Screen Dialog */}
       <Dialog
@@ -143,25 +146,26 @@ const TeamCard = ({ name, role, image }) => {
           </IconButton>
 
           <Box
-            sx={{
-              width: '100%',
-              height: '90vh',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              bgcolor: 'black',
-            }}
-          >
-            <img
-              src={image || "/api/placeholder/400/320"}
-              alt={name}
-              style={{
-                maxWidth: '100%',
-                maxHeight: '100%',
-                objectFit: 'contain',
-              }}
-            />
-          </Box>
+  sx={{
+    width: '100%',
+    height: '95vh', // Larger dialog box image height
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    bgcolor: 'black',
+  }}
+>
+  <img
+    src={image || "/api/placeholder/400/320"}
+    alt={name}
+    style={{
+      maxWidth: '100%',
+      maxHeight: '100%',
+      objectFit: 'contain',
+    }}
+  />
+</Box>
+
 
           <Box
             sx={{
