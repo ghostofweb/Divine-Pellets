@@ -14,27 +14,56 @@ const Home = () => {
   return (
     <div>
       <Helmet>
-        <title>Divine Pellets | Indian Biomass & Eco-Friendly Energy Solutions</title>
-        <meta
-          name="description"
-          content="Discover Divine Pellets, India's leading supplier of high-quality biomass energy pellets. Eco-friendly, sustainable, and affordable heating solutions tailored for India."
-        />
-        <meta
-          name="keywords"
-          content="Indian biomass pellets, eco-friendly energy, sustainable heating, renewable energy India, wood pellets, biomass suppliers India, clean energy solutions, green heating solutions"
-        />
-        <meta name="author" content="Divine Pellets" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content="Divine Pellets | Sustainable Biomass Energy" />
-        <meta
-          property="og:description"
-          content="Join the eco-friendly revolution with Divine Pellets, India's trusted provider of biomass energy pellets. High-quality and cost-effective energy solutions."
-        />
-        <meta property="og:image" content="/assets/images/hero-image.jpg" />
-        <meta property="og:url" content="https://divinepellets.com/" />
-        <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://divinepellets.com/" />
-      </Helmet>
+  {/* Page Title */}
+  <title>Divine Pellets | Indian Biomass & Eco-Friendly Energy Solutions</title>
+
+  {/* Meta Descriptions */}
+  <meta
+    name="description"
+    content="Discover Divine Pellets, India's leading supplier of high-quality biomass energy pellets. Eco-friendly, sustainable, and affordable heating solutions tailored for India."
+  />
+  <meta
+    name="keywords"
+    content="Indian biomass pellets, eco-friendly energy, sustainable heating, renewable energy India, wood pellets, biomass suppliers India, clean energy solutions, green heating solutions"
+  />
+  <meta name="author" content="Divine Pellets" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  {/* Canonical URL */}
+  <link rel="canonical" href="https://divinepellets.com/" />
+
+  {/* Open Graph Metadata */}
+  <meta property="og:title" content="Divine Pellets | Eco-Friendly Biomass Energy" />
+  <meta
+    property="og:description"
+    content="Join the eco-friendly revolution with Divine Pellets, India's trusted provider of biomass energy pellets. High-quality and cost-effective energy solutions."
+  />
+  <meta property="og:image" content="https://divinepellets.com/assets/images/og-image.jpg" />
+  <meta property="og:url" content="https://divinepellets.com/" />
+  <meta property="og:type" content="website" />
+
+
+  {/* Structured Data (JSON-LD) */}
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "http://schema.org/",
+      "@type": "Organization",
+      "name": "Divine Pellets",
+      "url": "https://divinepellets.com/",
+      "logo": "https://divinepellets.com/assets/images/logo.png",
+      "description":
+        "Discover Divine Pellets, India's leading supplier of high-quality biomass energy pellets. Eco-friendly, sustainable, and affordable heating solutions tailored for India.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-8595831461",
+        "contactType": "Customer Service",
+      },
+      "sameAs": [
+        "https://www.instagram.com/divine_pellets/",
+      ],
+    })}
+  </script>
+</Helmet>
 
       <Hero />
       <Hero2 />
