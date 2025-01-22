@@ -73,43 +73,9 @@ const About = () => {
 
 {/* Director of Accountancy */}
 
-    <div className='flex flex-col-reverse sm:flex-row pt-11'>
-    <motion.div
-        className='w-full px-4 sm:w-1/2 flex items-center justify-center'
-        initial={{ opacity: 0, x: 100 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1 }}
-      >
-      <img
-  className="w-full h-[40rem] object-cover sm:w-[25rem] shadow-lg shadow-black rounded-lg"
-  src={directors.dhruvgoyal}
-  alt="Hero"
-/> 
-</motion.div>
-      {/* Hero Left side with animation */}
-      <motion.div
-        className='w-full sm:w-1/2 flex items-center justify-center py-10 sm:py-0'
-        initial={{ opacity: 0, x: -100 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1 }}
-      >
-         <div className='w-full lg:w-1/2'>
-            <h1 className='text-lg sm:text-4xl font-cinzel font-bold text-[#0c301c]'>
-              Dhruv Goel
-            </h1>
-            <div className='flex flex-row items-center'>
-              <p className='pr-2 font-bold font-montserrat'>Managing Director</p>
-              <div className="w-8 sm:w-12 h-[1px] sm:h-[2px] bg-[#020e0b]" />
-            </div>
-            <p className='mt-4 font-montserrat'>
-            At divinepellets, we are led by our visionary Managing Director,Dhruv Goel, who drives innovation and excellence. Backed by a skilled and collaborative team, we are committed to delivering outstanding results and fostering a culture of growth and integrity. Together, we aim to set new standards in the industry.
-            </p>
-          </div>
-      </motion.div>
-    </div>
     <div className='text-center my-16 py-7 px-4 shadow-lg shadow-black font-bold bg-[#EEEEEE] hover:scale-105 hover:shadow-2xl transition-all duration-300'>
   <p className='font-montserrat'>
-    Despite being students of Class 11, Deep and Dhruv have proven that age is no barrier to entrepreneurship. Their passion, dedication, and commitment to sustainability have made Divine Pellets a name to trust in the biomass industry.
+    Despite being students of Class 11, Deep have proven that age is no barrier to entrepreneurship. Their passion, dedication, and commitment to sustainability have made Divine Pellets a name to trust in the biomass industry.
   </p>
 </div>
 
@@ -128,15 +94,15 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <Typography variant="body1" className="text-gray-700 leading-relaxed mb-6">
-              Divine Pellets emerged from the innovative minds of two extraordinary young entrepreneurs, Deep Lal and Dhruv Goel. Despite their youth as Class 11 students, their vision for revolutionizing renewable energy has proven that passion knows no age limits.
+              Divine Pellets emerged from the innovative minds of two extraordinary young entrepreneurs, Deep Lal . Despite their youth as Class 11 students, their vision for revolutionizing renewable energy has proven that passion knows no age limits.
             </Typography>
             <Grid container spacing={4} className="mb-6">
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} >
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Card className="p-6 h-full bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                  <Card className="p-6 h-full w-full bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300">
                     <Typography variant="h6" className="text-green-800 font-bold mb-3">
                       Deep Lal - Managing Director
                     </Typography>
@@ -151,14 +117,7 @@ const About = () => {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Card className="p-6 h-full bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                    <Typography variant="h6" className="text-green-800 font-bold mb-3">
-                      Dhruv Goel - Managing Director
-                    </Typography>
-                    <Typography className="text-gray-600">
-                    As Head of Team Management, Dhruv ensures seamless collaboration and operational efficiency by fostering teamwork, optimizing processes, and driving strategic growth.
-                    </Typography>
-                  </Card>
+             
                 </motion.div>
               </Grid>
             </Grid>
