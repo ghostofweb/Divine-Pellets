@@ -15,16 +15,6 @@ const About = () => {
   }, []);
   const teamMembers = [
     {
-      name: "Amandeep Singh",
-      role: "Vice President of Marketing and Head of Finance Department",
-      image: directors.finance
-    },
-    {
-      name: "Vishesh Bhatia",
-      role: "Head of Sales Department",
-      image: directors.marketing
-    },
-    {
       name: "Rakesh Kumar Verma",
       role: "Head of Raw Material",
       image: directors.rawmaterial
@@ -264,7 +254,7 @@ const About = () => {
 
 <Title title="Our Team" />
 <div className="container mx-auto px-4">
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+  <div className="grid grid-cols-1 gap-8">
     {teamMembers.map((member, index) => (
       <motion.div
         key={index}
