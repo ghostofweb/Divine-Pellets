@@ -97,10 +97,8 @@ const Contact = () => {
   console.error('Error sending email:', error);
 
   if (error.response && error.response.data && error.response.data.error) {
-    toast.error(`Email failed: ${error.response.data.error}`);
     setStatus(`error: ${error.response.data.error}`);
   } else {
-    toast.error('Something went wrong while sending the email.');
     setStatus('error');
   }
 }
