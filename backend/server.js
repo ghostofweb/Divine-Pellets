@@ -58,9 +58,16 @@ app.post('/send-email', async (req, res) => {
     console.log('Email sent successfully: ', response); // You can log the response for debugging
     res.status(200).json({ success: 'Email sent successfully!' });
   } catch (error) {
-    console.error('Error sending email: ', error);
-    res.status(500).json({ error: 'Failed to send email' });
-  }
+  console.error('Error sending email: ', error?.response?.body || error.message || error);
+
+  const errorMessage =
+    error?.response?.body?.message ||
+    error?.response?.body?.code ||
+    error?.message ||
+    'Failed to send email';
+
+  res.status(500).json({ error: errorMessage });
+}
 });
 
 app.get('/', (req, res) => {
